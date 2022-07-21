@@ -1,0 +1,141 @@
+<div class="main">
+  <div class="tabs-group">
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab [label]="'Bookings'">
+        <div class="section">
+          <table class="table" mt-3>
+            <thead>
+              <tr>
+                <th scope="col">User Email</th>
+                <th scope="col">Movie Booked</th>
+                <th scope="col">Date</th>
+                <th scope="col">Tickets</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of bookingsData">
+                <td>{{ row.userEmail }}</td>
+                <td>{{ row.movieName }}</td>
+                <td>{{ row.date }}</td>
+                <td>{{ row.tickets }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-tab>
+      <mat-tab [label]="'Movies'">
+        <div class="d-flex">
+          <button (click)="clickAddMovie()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">
+            Add Movie
+          </button>
+        </div>
+        <div class="section">
+          <table class="table" mt-3>
+            <thead>
+              <tr>
+                <th scope="col">Movie Id</th>
+                <th scope="col">Movie</th>
+                <th scope="col">Year</th>
+                <th scope="col">Duration - Minutes</th>
+                <th scope="col">Director</th>
+                <th scope="col">Actors</th>
+                <th scope="col">Cinemas</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let row of moviesData">
+                <td>{{ row.id }}</td>
+                <td>{{ row.movie }}</td>
+                <td>{{ row.year }}</td>
+                <td>{{ row.duration }}</td>
+                <td>{{ row.director }}</td>
+                <td>{{ row.actors }}</td>
+                <td>{{ row.cinemas }}</td>
+                <td>
+                  <button (click)="onEdit(row)" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-warning mx-3">Edit</button>
+                  <button (click)="deleteMovie(row)" class="btn btn-danger mx-3">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-tab>
+      <mat-tab [label]="'View Users'">
+        <div class="section">
+          <table class="table" mt-3>
+            <thead>
+              <tr>
+                <th scope="col">Email</th>
+                <th scope="col">First name</th>
+                <th scope="col">Last name</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Password</th>
+                <th scope="col">Id</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of usersData">
+                <td>{{ row.email }}</td>
+                <td>{{ row.firstName }}</td>
+                <td>{{ row.lastName }}</td>
+                <td>{{ row.mobile }}</td>
+                <td>{{ row.password }}</td>
+                <td>{{ row.id }}</td>
+                <td>
+                  <button (click)="deleteUser(row)" class="btn btn-danger mx-3">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Movie</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Trailer</label>
+            <input type="url" formControlName="trailer" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Movie</label>
+            <input type="text" formControlName="movie" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Year</label>
+            <input type="number" formControlName="year" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Duration</label>
+            <input type="number" formControlName="duration" class="form-control" id="exampleInputPassword1" />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Director</label>
+            <input type="text" formControlName="director" class="form-control" id="exampleInputPassword1" />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Actors</label>
+            <input type="text" formControlName="actors" class="form-control" id="exampleInputPassword1" />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" *ngIf="showAdd" (click)="postMovieDetails()" class="btn btn-primary">Add</button>
+        <button type="button" *ngIf="showUpdate" (click)="updateMovieDetails()" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </div>
+</div>

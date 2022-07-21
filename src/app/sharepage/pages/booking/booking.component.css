@@ -1,0 +1,39 @@
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-size: cover;
+}
+
+.content {
+  margin: 40px 80px 40px 0px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 4fr);
+}
+
+.movies {
+  min-width: 320px;
+  margin-left: 30px;
+  margin-bottom: 60px;
+}
+
+.movie-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.trailer {
+  margin-bottom: 20px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}

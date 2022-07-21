@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'current-directory'`, () => {
+  it(`should have as title 'Cinema-City'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('current-directory');
+    expect(app.title).toEqual('Cinema-City');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('current-directory app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('Cinema-City app is running!');
   });
 });

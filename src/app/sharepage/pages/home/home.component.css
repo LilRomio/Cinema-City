@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-size: cover;
+  height: 600px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subcarrousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.row-subcarrousel {
+  margin-top: 20px;
+  display: flex;
+
+  flex-direction: row;
+}
+
+.col {
+  margin-left: 120px;
+}

@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  color: var(--secondary-color);
+  border: none;
+  width: 500px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #2c5364, #203a43, #0f2027); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #2c5364, #203a43, #0f2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--secondary-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
