@@ -1,5 +1,7 @@
 # CinemaCity
 
+This was my final project I did for Informal School of IT. It is a booking app, with singUp/login functionallity, an AdminDashboard where I used different CRUD operations like ADD/EDIT a movie, view users or bookings. The app is still work in progress as I want to implement different features like google auth and an user dashboard 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
 ## Development server
